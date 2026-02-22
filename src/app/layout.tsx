@@ -2,6 +2,9 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Inter, Source_Code_Pro } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
+const sourceCodePro = Source_Code_Pro({ subsets: ['latin'] });
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import CookieBanner from '../components/CookieBanner';
