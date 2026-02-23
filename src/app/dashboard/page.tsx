@@ -23,6 +23,7 @@ import {
   Menu,
   CheckCircle,
   Bell,
+  Briefcase,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -45,6 +46,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { ContributorDashboard } from '@/components/dashboard/contributor/ContributorDashboard';
+
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -58,6 +62,7 @@ export default function DashboardPage() {
     { id: 'schedule', icon: <Calendar size={20} />, label: 'Schedule', href: '#' },
     { id: 'certs', icon: <Certificate size={20} />, label: 'Certifications', href: '#' },
     { id: 'community', icon: <MessageSquare size={20} />, label: 'Community', href: '#' },
+    { id: 'workforce', icon: <Briefcase size={20} />, label: 'Workforce', href: '#' },
     { id: 'progress', icon: <BarChart3 size={20} />, label: 'Progress', href: '#' },
     { id: 'settings', icon: <Settings size={20} />, label: 'Settings', href: '#' },
   ];
@@ -311,6 +316,7 @@ export default function DashboardPage() {
             <TabsList>
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="courses">My Courses</TabsTrigger>
+              <TabsTrigger value="contributor">Workforce</TabsTrigger>
               <TabsTrigger value="certificates">Certificates</TabsTrigger>
             </TabsList>
             <TabsContent value="overview" className="space-y-4">
@@ -804,6 +810,10 @@ export default function DashboardPage() {
                   </CardContent>
                 </Card>
               </div>
+            </TabsContent>
+
+            <TabsContent value="contributor">
+              <ContributorDashboard />
             </TabsContent>
           </Tabs>
         </main>
