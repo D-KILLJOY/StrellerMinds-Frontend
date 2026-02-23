@@ -2,6 +2,18 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Inter, Source_Code_Pro } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-source-code-pro',
+});
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import CookieBanner from '../components/CookieBanner';
@@ -149,29 +161,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-  <body className={`${inter.variable} ${sourceCodePro.variable}`}>
-    <StyledComponentsRegistry>
-      <Providers>
-        <EnvironmentValidator />
+      <body className={`${inter.variable} ${sourceCodePro.variable}`}>
+        <StyledComponentsRegistry>
+          <Providers>
+            <EnvironmentValidator />
 
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-16 focus:bg-[#5c0f49] focus:text-white focus:p-4 focus:outline-none focus:z-50"
-        >
-          Skip to content
-        </a>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-16 focus:bg-[#5c0f49] focus:text-white focus:p-4 focus:outline-none focus:z-50"
+            >
+              Skip to content
+            </a>
 
-        <MainLayoutWrapper>
-          {children}
-        </MainLayoutWrapper>
+            <MainLayoutWrapper>
+              {children}
+            </MainLayoutWrapper>
 
-        <Toaster position="top-right" />
-        <Analytics />
-        <CookieBanner />
-      </Providers>
-    </StyledComponentsRegistry>
-  </body>
-</html>
+            <Toaster position="top-right" />
+            <Analytics />
+            <CookieBanner />
+          </Providers>
+        </StyledComponentsRegistry>
+      </body>
+    </html>
 
   );
 }
